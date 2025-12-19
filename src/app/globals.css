@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html, body {
+  background-color: #f7faff;
+  overflow: hidden;
+}
+
+
+.searchIcon{
+  position: absolute;
+  top: 50%;
+  bottom: auto;
+  transform: trangrayY(-50%);
+  z-index: 100;
+}
+
+.mainContent{
+  height: calc(100vh - 71px);
+  padding: 16px;
+  padding-bottom: 0;
+  overflow-y: auto;
+}
+
+.wBox {
+  display: -webkit-box;
+}

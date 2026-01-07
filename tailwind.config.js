@@ -9,6 +9,9 @@ module.exports = withMT({
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ["Golos Text", "sans-serif"],
+			},
 			screens: {
 				sm: "640px",
 				md: "768px",
@@ -18,17 +21,17 @@ module.exports = withMT({
 			},
 			colors: {
 				primary: {
-					50: "#eef4ff",
-					100: "#dfeaff",
-					200: "#c6d6ff",
-					300: "#a3bcfe",
-					400: "#7f96fa",
-					500: "#6071f4",
-					600: "#434ae8",
-					700: "#3538cd",
-					800: "#2e32a5",
-					900: "#2c3183",
-					950: "#1a1c4c",
+					50: "#D3F8D3",
+					100: "#BEF5BD",
+					200: "#A8F1A7",
+					300: "#7CEB7A",
+					400: "#51E44E",
+					500: "#25DD22",
+					600: "#1EB11B",
+					700: "#168514",
+					800: "#0F580E",
+					900: "#072C07",
+					950: "#041603",
 				},
 			},
 		},

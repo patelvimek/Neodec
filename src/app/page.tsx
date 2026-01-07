@@ -1,125 +1,47 @@
 "use client";
-
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
-	Navbar,
-	MobileNav,
 	Typography,
-	IconButton,
-	Chip,
-	Collapse,
-	List,
-	ListItem,
 	Accordion,
 	AccordionHeader,
 	AccordionBody,
 	Input,
 } from "@material-tailwind/react";
-import SplitText from "./SplitText";
-import LightPillar from "./Lightpillars";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./components/Button";
 import CustomButton from "./components/Button";
-
-import LogoLoop from "./LogoLoop";
 import ChipGhost from "./components/ChipGhost";
-
-const imageLogos = [
-	{
-		src: "/img/logo-01.svg",
-		alt: "Company 1",
-		href: "https://company1.com",
-	},
-	{
-		src: "/img/logo-02.svg",
-		alt: "Company 2",
-		href: "https://company2.com",
-	},
-	{
-		src: "/img/logo-03.svg",
-		alt: "Company 3",
-		href: "https://company3.com",
-	},
-	{
-		src: "/img/logo-04.svg",
-		alt: "Company 2",
-		href: "https://company2.com",
-	},
-	{
-		src: "/img/logo-05.svg",
-		alt: "Company 3",
-		href: "https://company3.com",
-	},
-];
-
-function Icon({ id, open }: { id: number; open: number }) {
-	return (
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			fill="none"
-			viewBox="0 0 24 24"
-			strokeWidth={2}
-			stroke="currentColor"
-			className={`${
-				id === open ? "rotate-180" : ""
-			} h-5 w-5 transition-transform`}
-		>
-			<path
-				strokeLinecap="round"
-				strokeLinejoin="round"
-				d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-			/>
-		</svg>
-	);
-}
+import TrustedPartners from "./components/TrustedPartners";
+import SectionTitle from "./components/SectionTitle";
+import SectionSubText from "./components/SectionSubText";
+import Header from "./components/Header";
 
 export default function MainPage() {
-	const [openNav, setOpenNav] = useState(false);
 	const [open, setOpen] = React.useState(0);
 
 	const handleOpen = (value: number) => setOpen(open === value ? 0 : value);
 
-	const navList = (
-		<ul className="flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-			<Typography
-				as="li"
-				variant="small"
-				className="flex items-center gap-x-2 p-1 font-medium text-gray-400"
+	function Icon({ id, open }: { id: number; open: number }) {
+		return (
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				strokeWidth={2}
+				stroke="currentColor"
+				className={`${
+					id === open ? "rotate-180" : ""
+				} h-5 w-5 transition-transform`}
 			>
-				<a href="#" className="flex items-center">
-					Home
-				</a>
-			</Typography>
-			<Typography
-				as="li"
-				variant="small"
-				className="flex items-center gap-x-2 p-1 font-medium text-gray-400"
-			>
-				<a href="#" className="flex items-center">
-					Features
-				</a>
-			</Typography>
-			<Typography
-				as="li"
-				variant="small"
-				className="flex items-center gap-x-2 p-1 font-medium text-gray-400"
-			>
-				<a href="#" className="flex items-center">
-					Testimonial
-				</a>
-			</Typography>
-			<Typography
-				as="li"
-				variant="small"
-				className="flex items-center gap-x-2 p-1 font-medium text-gray-400"
-			>
-				<a href="#" className="flex items-center">
-					FAQ
-				</a>
-			</Typography>
-		</ul>
-	);
+				<path
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+				/>
+			</svg>
+		);
+	}
+
 	return (
 		<>
 			<div className="w-full h-screen min-h-max relative overflow-hidden">
@@ -139,84 +61,7 @@ export default function MainPage() {
 				/> */}
 
 				<div className="p-4 fixed top-0 left-0 w-full z-50">
-					<Navbar className="w-full max-w-full py-3 px-5 rounded-3xl border-0 glassBg">
-						<div className="flex items-center justify-between basis-full">
-							<div className="flex items-center basis-1/3">
-								<Link href="#" className="cursor-pointer inline-block">
-									<Image
-										src="/img/logo.svg"
-										alt="Logo"
-										width={110}
-										height={30}
-									/>
-								</Link>
-							</div>
-							<div className="hidden lg:flex basis-1/3 justify-center">
-								{navList}
-							</div>
-							<div className="flex items-center justify-end gap-4 basis-1/3 ">
-								<CustomButton variant="text" className="hidden lg:inline-block">
-									<span>Log In</span>
-								</CustomButton>
-								<CustomButton
-									variant="filled"
-									className="hidden lg:inline-block"
-								>
-									<span>Try For Free</span>
-								</CustomButton>
-							</div>
-							<IconButton
-								variant="text"
-								className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-								ripple={false}
-								onClick={() => setOpenNav(!openNav)}
-							>
-								{openNav ? (
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										className="h-6 w-6"
-										viewBox="0 0 24 24"
-										stroke="currentColor"
-										strokeWidth={2}
-									>
-										<path
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											d="M6 18L18 6M6 6l12 12"
-										/>
-									</svg>
-								) : (
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										className="h-6 w-6"
-										fill="none"
-										stroke="currentColor"
-										strokeWidth={2}
-									>
-										<path
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											d="M4 6h16M4 12h16M4 18h16"
-										/>
-									</svg>
-								)}
-							</IconButton>
-						</div>
-						<Collapse open={openNav}>
-							<div className="flex flex-col gap-5 py-4">
-								{navList}
-								<div className="flex items-center justify-center gap-4">
-									<CustomButton variant="outlined" className="">
-										<span>Log In</span>
-									</CustomButton>
-									<CustomButton variant="filled" className="">
-										<span>Try For Free</span>
-									</CustomButton>
-								</div>
-							</div>
-						</Collapse>
-					</Navbar>
+					<Header />
 				</div>
 
 				<section className="container mx-auto px-4 my-20">
@@ -257,46 +102,12 @@ export default function MainPage() {
 			</div>
 
 			<section className="container mx-auto px-4">
-				<div className="text-center py-12">
-					<Typography
-						variant="paragraph"
-						className="text-gray-500 font-normal text-base leading-5 mb-8"
-					>
-						Globally Trusted Partners
-					</Typography>
-
-					<div className="overflow-hidden relative">
-						<LogoLoop
-							logos={imageLogos}
-							speed={20}
-							direction="left"
-							logoHeight={33}
-							gap={70}
-							hoverSpeed={0}
-							scaleOnHover
-							fadeOut
-							fadeOutColor="#0a0a0a"
-							ariaLabel="Technology partners"
-						/>
-					</div>
-				</div>
-
+				<TrustedPartners />
 				<div className="flex flex-col gap-9 py-20 mb-8">
 					<div className="flex flex-col justify-center items-center text-center gap-5 md:w-2/3 md:mx-auto md:px-10 ">
 						<ChipGhost text="Decentralised" />
-						<Typography
-							variant="h3"
-							className="text-gray-200 font-medium text-3xl"
-						>
-							Powering the future of digital asset infrastructure{" "}
-						</Typography>
-						<Typography
-							variant="h6"
-							className="text-gray-500 font-normal text-base mb-6 md:w-2/3 md:mx-auto"
-						>
-							Secure, scalable, and decentralized solutions for your digital
-							assets experience the future of financial freedom.
-						</Typography>
+						<SectionTitle title="Powering the future of digital asset infrastructure" />
+						<SectionSubText text="Secure, scalable, and decentralized solutions for your digital assets experience the future of financial freedom." />
 					</div>
 					<div className="grid grid-cols-12 gap-4">
 						<div className="col-span-12 md:col-span-6 lg:col-span-5 p-6 glassBg glassBgLight min-h-[26rem] relative overflow-hidden">
@@ -401,19 +212,8 @@ export default function MainPage() {
 				<div className="flex flex-col gap-9 py-20 mb-8">
 					<div className="flex flex-col justify-center items-center text-center gap-5 md:w-2/3 md:mx-auto md:px-10 ">
 						<ChipGhost text="Decentralised" />
-						<Typography
-							variant="h3"
-							className="text-gray-200 font-medium text-3xl"
-						>
-							The future of finance is digital
-						</Typography>
-						<Typography
-							variant="h6"
-							className="text-gray-500 font-normal text-base mb-6 md:w-2/3 md:mx-auto"
-						>
-							Secure, scalable, and decentralized solutions for your digital
-							assets experience the future of financial freedom.
-						</Typography>
+						<SectionTitle title="The future of finance is digital" />
+						<SectionSubText text="Secure, scalable, and decentralized solutions for your digital assets experience the future of financial freedom." />
 					</div>
 					<div className="grid grid-cols-12 gap-6">
 						<div className="col-span-12 md:col-span-6 lg:col-span-4 p-8 glassBg glassBgLighter text-center gap-2">
@@ -554,19 +354,8 @@ export default function MainPage() {
 				<div className="flex flex-col gap-9 py-20 mb-8">
 					<div className="flex flex-col justify-center items-center text-center gap-5 md:w-2/3 md:mx-auto md:px-10 ">
 						<ChipGhost text="Decentralised" />
-						<Typography
-							variant="h3"
-							className="text-gray-200 font-medium text-3xl"
-						>
-							Flexible Plans for every need and budget
-						</Typography>
-						<Typography
-							variant="h6"
-							className="text-gray-500 font-normal text-base mb-6 md:w-2/3 md:mx-auto"
-						>
-							Choose the plan that's right for you and start building your
-							decentralized future today.
-						</Typography>
+						<SectionTitle title="The future of finance is digital" />
+						<SectionSubText text="Secure, scalable, and decentralized solutions for your digital assets experience the future of financial freedom." />
 					</div>
 					<div className="grid grid-cols-12 gap-6">
 						<div className="col-span-12 md:col-span-6 lg:col-span-4 p-8 glassBg glassBgLighter gap-2">
@@ -811,7 +600,7 @@ export default function MainPage() {
 					<Link href="#" className="cursor-pointer inline-block">
 						<Image src="/img/logo.svg" alt="Logo" width={110} height={30} />
 					</Link>
-					{navList}
+					{/* {navList} */}
 				</div>
 
 				<div className="flex justify-between items-center text-center gap-6 py-6 border-t border-t-gray-800">

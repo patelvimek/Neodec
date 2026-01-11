@@ -9,14 +9,15 @@ import {
 } from "@material-tailwind/react";
 import Image from "next/image";
 import Link from "next/link";
-import CustomButton from "./components/Button";
-import ChipGhost from "./components/ChipGhost";
+import CustomButton from "./components/ui/Button";
+import ChipGhost from "./components/ui/ChipGhost";
 import TrustedPartners from "./components/TrustedPartners";
 import SectionTitle from "./components/SectionTitle";
 import SectionSubText from "./components/SectionSubText";
 import Header from "./components/Header";
-import BentoCard from "./components/BentoCard";
+import BentoCard from "./components/ui/BentoCard";
 import FeaturesGrid from "./components/FeaturesGrid";
+import ScrollReveal from "./components/animation/ScrollReveal";
 
 export default function MainPage() {
 	const [open, setOpen] = React.useState(0);
@@ -160,6 +161,21 @@ export default function MainPage() {
 					<div className="grid grid-cols-12 gap-6">
 						<FeaturesGrid />
 					</div>
+				</div>
+
+				<div className="flex flex-col gap-8 py-20 mb-8">
+					<ScrollReveal
+						baseOpacity={0}
+						enableBlur={true}
+						baseRotation={8}
+						blurStrength={20}
+					>
+						NeoFi is a global leader in digital asset infrastructure, delivering
+						highly secure and scalable solutions for institutions and builders
+						in the crypto ecosystem. Its offerings span regulated custody,
+						lending and borrowing services, and foundational infrastructure
+						designed to support the growing digital economy.
+					</ScrollReveal>
 				</div>
 
 				<div className="flex flex-col gap-9 py-20 mb-8">

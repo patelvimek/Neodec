@@ -8,7 +8,7 @@ import {
 } from "@material-tailwind/react";
 import Image from "next/image";
 import Link from "next/link";
-import CustomButton from "./Button";
+import CustomButton from "./ui/Button";
 
 export default function Header() {
 	const [openNav, setOpenNav] = useState(false);

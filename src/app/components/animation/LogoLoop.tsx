@@ -5,7 +5,6 @@ import React, {
 	useRef,
 	useState,
 } from "react";
-import "./globals.css";
 
 export type LogoItem =
 	| {

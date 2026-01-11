@@ -1,5 +1,5 @@
 import { FeatureData } from "../types/types";
-import FeatureCard from "./FeatureCard";
+import FeatureCard from "./ui/FeatureCard";
 
 const featureData: FeatureData[] = [
 	{

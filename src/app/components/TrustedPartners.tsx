@@ -1,5 +1,5 @@
 import { Typography } from "@material-tailwind/react";
-import LogoLoop from "../LogoLoop";
+import LogoLoop from "./animation/LogoLoop";
 
 const imageLogos = [
 	{

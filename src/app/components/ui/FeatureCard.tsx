@@ -1,6 +1,6 @@
 import { Typography } from "@material-tailwind/react";
 import Image from "next/image";
-import { FeatureCardProps } from "../types/types";
+import { FeatureCardProps } from "../../types/types";
 
 export default function FeatureCard({
 	title,

@@ -15,6 +15,8 @@ import TrustedPartners from "./components/TrustedPartners";
 import SectionTitle from "./components/SectionTitle";
 import SectionSubText from "./components/SectionSubText";
 import Header from "./components/Header";
+import BentoCard from "./components/BentoCard";
+import FeaturesGrid from "./components/FeaturesGrid";
 
 export default function MainPage() {
 	const [open, setOpen] = React.useState(0);
@@ -109,245 +111,54 @@ export default function MainPage() {
 						<SectionTitle title="Powering the future of digital asset infrastructure" />
 						<SectionSubText text="Secure, scalable, and decentralized solutions for your digital assets experience the future of financial freedom." />
 					</div>
-					<div className="grid grid-cols-12 gap-4">
-						<div className="col-span-12 md:col-span-6 lg:col-span-5 p-6 glassBg glassBgLight min-h-[26rem] relative overflow-hidden">
-							<Typography
-								variant="h5"
-								className="text-gray-200 font-medium text-xl mb-3"
-							>
-								Instant access to liquidity and capital
-							</Typography>
-							<Typography
-								variant="h6"
-								className="text-gray-500 font-normal text-base mb-3"
-							>
-								Unlock efficient capital movement with infrastructure built for
-								speed and reliability.
-							</Typography>
-							<div className="absolute bottom-0 right-0">
-								<Image
-									src="/img/graph-01.svg"
-									alt="Logo"
-									width={400}
-									height={254}
-									className="w-full"
-								/>
-							</div>
-						</div>
-						<div className="col-span-12 md:col-span-6 lg:col-span-7 p-6 glassBg glassBgLight min-h-[26rem] relative overflow-hidden">
-							<Typography
-								variant="h5"
-								className="text-gray-200 font-medium text-xl mb-3"
-							>
-								Instant access to liquidity and capital
-							</Typography>
-							<Typography
-								variant="h6"
-								className="text-gray-500 font-normal text-base mb-3"
-							>
-								Unlock efficient capital movement with infrastructure built for
-								speed and reliability.
-							</Typography>
-							<div className="absolute top-1/2 -translate-y-1/3 left-0 right-0">
-								<Image
-									src="/img/ecosystem.svg"
-									alt="Logo"
-									width={676}
-									height={201}
-									className="w-full"
-								/>
-							</div>
-						</div>
-						<div className="col-span-12 md:col-span-6 lg:col-span-7 p-6 glassBg glassBgLight min-h-[26rem] relative overflow-hidden">
-							<Typography
-								variant="h5"
-								className="text-gray-200 font-medium text-xl mb-3"
-							>
-								Instant access to liquidity and capital
-							</Typography>
-							<Typography
-								variant="h6"
-								className="text-gray-500 font-normal text-base mb-3"
-							>
-								Unlock efficient capital movement with infrastructure built for
-								speed and reliability.
-							</Typography>
-							<div className="absolute bottom-0 left-10 right-10">
-								<Image
-									src="/img/graph-02.svg"
-									alt="Logo"
-									width={631}
-									height={249}
-									className="w-full"
-								/>
-							</div>
-						</div>
-						<div className="col-span-12 md:col-span-6 lg:col-span-5 p-6 glassBg glassBgLight min-h-[26rem] relative overflow-hidden">
-							<Typography
-								variant="h5"
-								className="text-gray-200 font-medium text-xl mb-3"
-							>
-								Instant access to liquidity and capital
-							</Typography>
-							<Typography
-								variant="h6"
-								className="text-gray-500 font-normal text-base mb-3"
-							>
-								Unlock efficient capital movement with infrastructure built for
-								speed and reliability.
-							</Typography>
-							<div className="absolute bottom-0 left-10 right-10">
-								<Image
-									src="/img/notifications.svg"
-									alt="Logo"
-									width={428}
-									height={266}
-									className="w-full"
-								/>
-							</div>
-						</div>
+					<div className="grid grid-cols-12 gap-8">
+						<BentoCard
+							title="Instant access to liquidity and capital"
+							text="Unlock efficient capital movement with infrastructure built for speed"
+							imageSrc="/img/graph-01.svg"
+							className="col-span-12 md:col-span-6 lg:col-span-5"
+							imageContainerClassName="right-0 bottom-0"
+						/>
+
+						<BentoCard
+							title="Build, scale, and manage your ecosystem"
+							text="Launch and expand your digital asset ecosystem with confidence.
+								Industry-tested security keeps your keys isolated while
+								supporting growth at scale."
+							imageSrc="/img/ecosystem.svg"
+							className="col-span-12 md:col-span-6 lg:col-span-7"
+							imageContainerClassName="left-0 right-0 bottom-10"
+						/>
+
+						<BentoCard
+							title="Enterprise Grade Wallet Infrastructure"
+							text="Purpose built self custody and qualified wallet solutions
+								engineered for institutions. Advanced security ensures
+								protection for assets in both storage."
+							imageSrc="/img/graph-02.svg"
+							className="col-span-12 md:col-span-6 lg:col-span-7"
+							imageContainerClassName="left-10 right-10 bottom-0"
+						/>
+
+						<BentoCard
+							title="Global, real-time asset settlement"
+							text="Transfer instantly across borders with secure, real-time
+								settlement and tested key isolation transaction."
+							imageSrc="/img/notifications.svg"
+							className="col-span-12 md:col-span-6 lg:col-span-5"
+							imageContainerClassName="left-10 right-10 bottom-0"
+						/>
 					</div>
 				</div>
 
-				<div className="flex flex-col gap-9 py-20 mb-8">
+				<div className="flex flex-col gap-8 py-20 mb-8">
 					<div className="flex flex-col justify-center items-center text-center gap-5 md:w-2/3 md:mx-auto md:px-10 ">
 						<ChipGhost text="Decentralised" />
 						<SectionTitle title="The future of finance is digital" />
 						<SectionSubText text="Secure, scalable, and decentralized solutions for your digital assets experience the future of financial freedom." />
 					</div>
 					<div className="grid grid-cols-12 gap-6">
-						<div className="col-span-12 md:col-span-6 lg:col-span-4 p-8 glassBg glassBgLighter text-center gap-2">
-							<Image
-								src="/img/BoxIcon.svg"
-								alt="Logo"
-								width={56}
-								height={56}
-								className="mb-8 mx-auto"
-							/>
-							<Typography
-								variant="h6"
-								className="text-gray-200 font-medium text-lg mb-3"
-							>
-								Monetary freedom for all
-							</Typography>
-							<Typography
-								variant="lead"
-								className="text-gray-500 font-normal text-sm mb-3"
-							>
-								Digital assets reduce dependence on legacy financial
-								intermediaries, empowering users with greater control
-							</Typography>
-						</div>
-						<div className="col-span-12 md:col-span-6 lg:col-span-4 p-8 glassBg glassBgLighter text-center gap-2">
-							<Image
-								src="/img/BoxIcon.svg"
-								alt="Logo"
-								width={56}
-								height={56}
-								className="mb-8 mx-auto"
-							/>
-							<Typography
-								variant="h6"
-								className="text-gray-200 font-medium text-lg mb-3"
-							>
-								Monetary freedom for all
-							</Typography>
-							<Typography
-								variant="lead"
-								className="text-gray-500 font-normal text-sm mb-3"
-							>
-								Digital assets reduce dependence on legacy financial
-								intermediaries, empowering users with greater control
-							</Typography>
-						</div>
-						<div className="col-span-12 md:col-span-6 lg:col-span-4 p-8 glassBg glassBgLighter text-center gap-2">
-							<Image
-								src="/img/BoxIcon.svg"
-								alt="Logo"
-								width={56}
-								height={56}
-								className="mb-8 mx-auto"
-							/>
-							<Typography
-								variant="h6"
-								className="text-gray-200 font-medium text-lg mb-3"
-							>
-								Monetary freedom for all
-							</Typography>
-							<Typography
-								variant="lead"
-								className="text-gray-500 font-normal text-sm mb-3"
-							>
-								Digital assets reduce dependence on legacy financial
-								intermediaries, empowering users with greater control
-							</Typography>
-						</div>
-						<div className="col-span-12 md:col-span-6 lg:col-span-4 p-8 glassBg glassBgLighter text-center gap-2">
-							<Image
-								src="/img/BoxIcon.svg"
-								alt="Logo"
-								width={56}
-								height={56}
-								className="mb-8 mx-auto"
-							/>
-							<Typography
-								variant="h6"
-								className="text-gray-200 font-medium text-lg mb-3"
-							>
-								Monetary freedom for all
-							</Typography>
-							<Typography
-								variant="lead"
-								className="text-gray-500 font-normal text-sm mb-3"
-							>
-								Digital assets reduce dependence on legacy financial
-								intermediaries, empowering users with greater control
-							</Typography>
-						</div>
-						<div className="col-span-12 md:col-span-6 lg:col-span-4 p-8 glassBg glassBgLighter text-center gap-2">
-							<Image
-								src="/img/BoxIcon.svg"
-								alt="Logo"
-								width={56}
-								height={56}
-								className="mb-8 mx-auto"
-							/>
-							<Typography
-								variant="h6"
-								className="text-gray-200 font-medium text-lg mb-3"
-							>
-								Monetary freedom for all
-							</Typography>
-							<Typography
-								variant="lead"
-								className="text-gray-500 font-normal text-sm mb-3"
-							>
-								Digital assets reduce dependence on legacy financial
-								intermediaries, empowering users with greater control
-							</Typography>
-						</div>
-						<div className="col-span-12 md:col-span-6 lg:col-span-4 p-8 glassBg glassBgLighter text-center gap-2">
-							<Image
-								src="/img/BoxIcon.svg"
-								alt="Logo"
-								width={56}
-								height={56}
-								className="mb-8 mx-auto"
-							/>
-							<Typography
-								variant="h6"
-								className="text-gray-200 font-medium text-lg mb-3"
-							>
-								Monetary freedom for all
-							</Typography>
-							<Typography
-								variant="lead"
-								className="text-gray-500 font-normal text-sm mb-3"
-							>
-								Digital assets reduce dependence on legacy financial
-								intermediaries, empowering users with greater control
-							</Typography>
-						</div>
+						<FeaturesGrid />
 					</div>
 				</div>
 

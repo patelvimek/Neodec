@@ -6,7 +6,7 @@ interface ChipGhostProps {
 
 export default function ChipGhost({ text }: ChipGhostProps) {
 	return (
-		<div>
+		<>
 			<Chip
 				variant="ghost"
 				color="green"
@@ -17,6 +17,6 @@ export default function ChipGhost({ text }: ChipGhostProps) {
 					<span className="ml-3 mt-1 block h-2 w-2 rounded-full bg-primary-500 content-['']" />
 				}
 			/>
-		</div>
+		</>
 	);
 }

@@ -13,6 +13,13 @@ body {
 	font-family: "Golos Text", sans-serif;
 }
 
+input:-internal-autofill-selected {
+	background-color: rgb(117 117 117) !important;
+	background-clip: text !important;
+	-webkit-text-fill-color: #757575 !important;
+	transition: background-color 5000s ease-in-out 0s;
+}
+
 .glassBg {
 	background-color: rgba(126, 126, 126, 0.1);
 	box-shadow: 1px 1px 3px 0px rgba(245, 245, 245, 0.2) inset;

@@ -18,8 +18,7 @@ export default function HeroSection() {
 					variant="h6"
 					className="text-gray-400 font-normal text-sm md:text-base mb-5 md:mb-2 md:w-2/3 mx-auto z-10"
 				>
-					Secure, scalable and decentralized solutions for your digital assets
-					experience the future of financial freedom.
+					Enterprise-grade security and scalable infrastructure designed to store, move, and grow digital assets across the global economy
 				</Typography>
 				<div className="flex items-center gap-4">
 					<CustomButton variant="filled" size="lg" className="text-base z-10">

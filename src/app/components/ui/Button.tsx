@@ -45,13 +45,13 @@ export default function CustomButton({
 	}
 	switch (size) {
 		case "sm":
-			customClass += "py-2 px-4";
+			customClass += "py-2 px-4 text-sm";
 			break;
 		case "md":
-			customClass += "py-2.5 px-6";
+			customClass += "py-2.5 px-6 text-base";
 			break;
 		case "lg":
-			customClass += "py-3 px-8";
+			customClass += "py-3 px-8 text-lg";
 			break;
 	}
 
@@ -64,7 +64,7 @@ export default function CustomButton({
 			fullWidth={fullWidth}
 			disabled={disabled}
 			type={type}
-			className={`text-black rounded-full capitalize text-sm font-medium box-shadow-none hover:shadow-primary-800 hover:shadow-md  ${customClass} ${className}`}
+			className={`text-black rounded-full capitalize font-medium box-shadow-none hover:shadow-primary-800 hover:shadow-md  ${customClass} ${className}`}
 		>
 			{children}
 		</Button>

@@ -2,9 +2,6 @@
 import React, { useState } from "react";
 import {
 	Typography,
-	Accordion,
-	AccordionHeader,
-	AccordionBody,
 } from "@material-tailwind/react";
 import CustomButton from "./components/ui/Button";
 import ChipGhost from "./components/ui/ChipGhost";
@@ -19,37 +16,18 @@ import Newsletter from "./components/Newsletter";
 import HeroSection from "./components/HeroSection";
 import Footer from "./components/Footer";
 import LightPillar from "./components/animation/Lightpillars";
+import Accordion from "./components/ui/Accordion";
+import SingleAccordion from "./components/ui/SingleAccordion";
+import Tabs from "./components/ui/Tabs";
+import PlanCard from "./components/PlanCard";
 
 export default function MainPage() {
-	const [open, setOpen] = useState(0);
 
-	const handleOpen = (value: number) => setOpen(open === value ? 0 : value);
-
-	function Icon({ id, open }: { id: number; open: number }) {
-		return (
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				fill="none"
-				viewBox="0 0 24 24"
-				strokeWidth={2}
-				stroke="currentColor"
-				className={`${
-					id === open ? "rotate-180" : ""
-				} h-5 w-5 transition-transform`}
-			>
-				<path
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-				/>
-			</svg>
-		);
-	}
 
 	return (
 		<>
 			<section className="w-full h-screen min-h-max relative overflow-hidden">
-				<LightPillar
+				{/* <LightPillar
 					topColor="#24FC5C"
 					bottomColor="#711CFF"
 					intensity={0.4}
@@ -62,7 +40,7 @@ export default function MainPage() {
 					interactive={false}
 					mixBlendMode="normal"
 					className="z-0"
-				/>
+				/> */}
 
 				<Header />
 
@@ -119,17 +97,6 @@ export default function MainPage() {
 				</section>
 
 				<section className="flex flex-col gap-8 py-20 mb-8">
-					<div className="flex flex-col justify-center items-center text-center gap-5 md:w-2/3 md:mx-auto md:px-10 ">
-						<ChipGhost text="Decentralised" />
-						<SectionTitle title="The future of finance is digital" />
-						<SectionSubText text="Secure, scalable, and decentralized solutions for your digital assets experience the future of financial freedom." />
-					</div>
-					<div className="grid grid-cols-12 gap-6">
-						<FeaturesGrid />
-					</div>
-				</section>
-
-				<section className="flex flex-col gap-8 py-20 mb-8">
 					<ScrollReveal
 						baseOpacity={0}
 						enableBlur={true}
@@ -144,207 +111,103 @@ export default function MainPage() {
 					</ScrollReveal>
 				</section>
 
-				<section className="flex flex-col gap-9 py-20 mb-8">
+				<section className="flex flex-col gap-8 py-20 mb-8">
 					<div className="flex flex-col justify-center items-center text-center gap-5 md:w-2/3 md:mx-auto md:px-10 ">
 						<ChipGhost text="Decentralised" />
 						<SectionTitle title="The future of finance is digital" />
 						<SectionSubText text="Secure, scalable, and decentralized solutions for your digital assets experience the future of financial freedom." />
 					</div>
 					<div className="grid grid-cols-12 gap-6">
-						<div className="col-span-12 md:col-span-6 lg:col-span-4 p-8 glassBg glassBgLighter gap-2">
-							<Typography
-								variant="h3"
-								className="text-gray-200 font-medium text-3xl mb-4"
-							>
-								Starter Plan
-							</Typography>
-
-							<Typography
-								variant="lead"
-								className="text-gray-500 font-normal text-sm mb-3"
-							>
-								Ideal for individuals and small teams getting started with
-								financial automation.
-							</Typography>
-
-							<Typography
-								variant="h3"
-								className="text-gray-200 font-medium text-3xl my-11"
-							>
-								$499/mo
-							</Typography>
-
-							<CustomButton variant="filled" size="lg" className="w-full mb-11">
-								<span>Get Started</span>
-							</CustomButton>
-
-							<ul className="flex flex-col gap-2 list-disc list-inside">
-								<li className="text-gray-200 text-base">
-									Basic invoicing tools
-								</li>
-								<li className="text-gray-200 text-base">
-									Unified finance dashboard
-								</li>
-								<li className="text-gray-200 text-base">Expense tracking</li>
-								<li className="text-gray-200 text-base">
-									Email support (standard)
-								</li>
-								<li className="text-gray-200 text-base">Essential reporting</li>
-							</ul>
-						</div>
-						<div className="col-span-12 md:col-span-6 lg:col-span-4 p-8 glassBg glassBgLighter gap-2">
-							<Typography
-								variant="h3"
-								className="text-gray-200 font-medium text-3xl mb-4"
-							>
-								Starter Plan
-							</Typography>
-
-							<Typography
-								variant="lead"
-								className="text-gray-500 font-normal text-sm mb-3"
-							>
-								Ideal for individuals and small teams getting started with
-								financial automation.
-							</Typography>
-
-							<Typography
-								variant="h3"
-								className="text-gray-200 font-medium text-3xl my-11"
-							>
-								$499/mo
-							</Typography>
-
-							<CustomButton variant="filled" size="lg" className="w-full mb-11">
-								<span>Get Started</span>
-							</CustomButton>
-
-							<ul className="flex flex-col gap-2 list-disc list-inside">
-								<li className="text-gray-200 text-base">
-									Basic invoicing tools
-								</li>
-								<li className="text-gray-200 text-base">
-									Unified finance dashboard
-								</li>
-								<li className="text-gray-200 text-base">Expense tracking</li>
-								<li className="text-gray-200 text-base">
-									Email support (standard)
-								</li>
-								<li className="text-gray-200 text-base">Essential reporting</li>
-							</ul>
-						</div>
-						<div className="col-span-12 md:col-span-6 lg:col-span-4 p-8 glassBg glassBgLighter gap-2">
-							<Typography
-								variant="h3"
-								className="text-gray-200 font-medium text-3xl mb-4"
-							>
-								Starter Plan
-							</Typography>
-
-							<Typography
-								variant="lead"
-								className="text-gray-500 font-normal text-sm mb-3"
-							>
-								Ideal for individuals and small teams getting started with
-								financial automation.
-							</Typography>
-
-							<Typography
-								variant="h3"
-								className="text-gray-200 font-medium text-3xl my-11"
-							>
-								$499/mo
-							</Typography>
-
-							<CustomButton variant="filled" size="lg" className="w-full mb-11">
-								<span>Get Started</span>
-							</CustomButton>
-
-							<ul className="flex flex-col gap-2 list-disc list-inside">
-								<li className="text-gray-200 text-base">
-									Basic invoicing tools
-								</li>
-								<li className="text-gray-200 text-base">
-									Unified finance dashboard
-								</li>
-								<li className="text-gray-200 text-base">Expense tracking</li>
-								<li className="text-gray-200 text-base">
-									Email support (standard)
-								</li>
-								<li className="text-gray-200 text-base">Essential reporting</li>
-							</ul>
-						</div>
+						<FeaturesGrid />
 					</div>
+				</section>
+
+
+
+				<section className="flex flex-col gap-9 py-20 mb-8">
+					<div className="flex flex-col justify-center items-center text-center gap-5 md:w-2/3 md:mx-auto md:px-10 ">
+						<ChipGhost text="Pricing" />
+						<SectionTitle title="Flexible Plans for every need and budget" />
+						<SectionSubText text="Choose the plan that's right for you." />
+					</div>
+					<Tabs
+						tabs={[
+							{
+								id: "monthly",
+								label: "Monthly",
+								content: (
+									<div className="grid grid-cols-12 gap-6">
+										<PlanCard
+											title="Starter Plan"
+											description="Ideal for individuals and small teams getting started with financial automation."
+											price="$499/mo"
+											features={["Basic invoicing tools", "Unified finance dashboard", "Expense tracking", "Email support (standard)", "Essential reporting"]}
+										/>
+										<PlanCard
+											title="Pro Plan"
+											description="For growing businesses that need advanced tools and priority support."
+											price="$999/mo"
+											customButtonClass="bg-primary-500 hover:bg-primary-600 text-black"
+											features={["Advanced invoicing tools", "Multi-currency support", "Team collaboration", "Priority support", "Advanced analytics"]}
+										/>
+										<PlanCard
+											title="Enterprise Plan"
+											description="Custom solutions for large organizations with complex requirements."
+											price="$2,499/mo"
+											features={["Custom integrations", "Dedicated account manager", "24/7 premium support", "Unlimited users", "Custom reporting"]}
+										/>
+									</div>
+								),
+							},
+							{
+								id: "yearly",
+								label: "Yearly",
+								content: (
+									<div className="grid grid-cols-12 gap-6">
+										<PlanCard
+											title="Starter Plan"
+											description="Ideal for individuals and small teams getting started with financial automation."
+											price="$399/mo"
+											features={["Basic invoicing tools", "Unified finance dashboard", "Expense tracking", "Email support (standard)", "Essential reporting"]}
+										/>
+										<PlanCard
+											title="Pro Plan"
+											description="For growing businesses that need advanced tools and priority support."
+											price="$799/mo"
+											customButtonClass="bg-primary-500 hover:bg-primary-600 text-black"
+											features={["Advanced invoicing tools", "Multi-currency support", "Team collaboration", "Priority support", "Advanced analytics"]}
+										/>
+										<PlanCard
+											title="Enterprise Plan"
+											description="Custom solutions for large organizations with complex requirements."
+											price="$1,999/mo"
+											features={["Custom integrations", "Dedicated account manager", "24/7 premium support", "Unlimited users", "Custom reporting"]}
+										/>
+									</div>
+								),
+							},
+						]}
+						defaultTabId="monthly"
+					/>
 				</section>
 
 				<section className="flex flex-col gap-9 py-20 mb-8">
 					<div className="flex flex-col justify-center items-center text-center gap-5 md:w-2/3 md:mx-auto md:px-10 ">
-						<ChipGhost text="Decentralised" />
-						<Typography
-							variant="h3"
-							className="text-gray-200 font-medium text-3xl"
-						>
-							Your Questions everything you need
-						</Typography>
-						<Typography
-							variant="h6"
-							className="text-gray-500 font-normal text-base mb-6 md:w-2/3 md:mx-auto"
-						>
-							Choose the plan that's right for you and start building your
-							decentralized future today.
-						</Typography>
+						<ChipGhost text="Everything You Need to Know" />
+						<SectionTitle title="Your Questions everything you need" />
 					</div>
 					<div className="flex flex-col gap-6">
-						<Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
-							<div className="glassBg glassBgLightAccordion p-6">
-								<AccordionHeader
-									onClick={() => handleOpen(1)}
-									className="border-b-0 p-0 text-gray-300 text-xl font-normal hover:text-gray-200"
-								>
-									1. Seamless access to liquidity and capital
-								</AccordionHeader>
-								<AccordionBody className="p-0 pt-3 text-gray-400 text-base font-normal">
-									We&apos;re not always in the position that we want to be at.
-									We&apos;re constantly growing. We&apos;re constantly making
-									mistakes. We&apos;re constantly trying to express ourselves
-									and actualize our dreams.
-								</AccordionBody>
-							</div>
-						</Accordion>
+						<SingleAccordion title="1. Seamless access to liquidity and capital" defaultOpen={false}>
+							Isolate your keys with the leading battle-tested security technology for hot and cold wallets.
+						</SingleAccordion>
 
-						<Accordion open={open === 2} icon={<Icon id={2} open={open} />}>
-							<div className="glassBg glassBgLightAccordion p-6">
-								<AccordionHeader
-									onClick={() => handleOpen(2)}
-									className="border-b-0 p-0 text-gray-300 text-xl font-normal hover:text-gray-200"
-								>
-									1. Seamless access to liquidity and capital
-								</AccordionHeader>
-								<AccordionBody className="p-0 pt-3 text-gray-400 text-base font-normal">
-									We&apos;re not always in the position that we want to be at.
-									We&apos;re constantly growing. We&apos;re constantly making
-									mistakes. We&apos;re constantly trying to express ourselves
-									and actualize our dreams.
-								</AccordionBody>
-							</div>
-						</Accordion>
+						<SingleAccordion title="2. How secure is the platform?" defaultOpen={false}>
+							Isolate your keys with the leading battle-tested security technology for hot and cold wallets.
+						</SingleAccordion>
 
-						<Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
-							<div className="glassBg glassBgLightAccordion p-6">
-								<AccordionHeader
-									onClick={() => handleOpen(3)}
-									className="border-b-0 p-0 text-gray-300 text-xl font-normal hover:text-gray-200"
-								>
-									1. Seamless access to liquidity and capital
-								</AccordionHeader>
-								<AccordionBody className="p-0 pt-3 text-gray-400 text-base font-normal">
-									We&apos;re not always in the position that we want to be at.
-									We&apos;re constantly growing. We&apos;re constantly making
-									mistakes. We&apos;re constantly trying to express ourselves
-									and actualize our dreams.
-								</AccordionBody>
-							</div>
-						</Accordion>
+						<SingleAccordion title="3. Do you support global operations?" defaultOpen={false}>
+							Isolate your keys with the leading battle-tested security technology for hot and cold wallets.
+						</SingleAccordion>
 					</div>
 					<div className="text-center">
 						<CustomButton
@@ -352,7 +215,7 @@ export default function MainPage() {
 							size="lg"
 							className="text-base glassBg text-white z-10"
 						>
-							<span>Contact Us</span>
+							Contact Us
 						</CustomButton>
 					</div>
 				</section>

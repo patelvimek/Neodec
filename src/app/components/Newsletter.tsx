@@ -7,7 +7,7 @@ export default function Newsletter() {
 	return (
 		<div className="glassBg glassBgLighter p-14">
 			<div className="flex flex-col justify-center items-center text-center gap-6">
-				<ChipGhost text="Decentralised" />
+				<ChipGhost text="Stay Ahead in Digital Finance " />
 				<Typography
 					variant="h3"
 					className="text-gray-200 font-medium text-3xl capitalize"
